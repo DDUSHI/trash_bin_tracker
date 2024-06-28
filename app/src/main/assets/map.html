@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Trash Can Locator</title>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+    <script>
+        var map;
+        var markers = [];
+
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: 37.5665, lng: 126.9780 },
+                zoom: 12
+            });
+        }
+
+        function addMarker(lat, lng, type, index) {
+            var marker = new google.maps.Marker({
+                position: { lat: lat, lng: lng },
+                map: map,
+                draggable: true,
+                icon: type === 'general' ? 'general_trash_icon.png' : 'recycle_trash_icon.png'
+            });
+            marker.index = index;
+
+            google.maps.event.addListener(marker, 'dragend', function () {
+                var lat = marker.getPosition().lat();
+                var lng = marker.getPosition().lng();
+                Android.updateMarkerPosition(marker.index, lat, lng);
+            });
+
+            markers.push(marker);
+        }
+
+        window.onload = initMap;
+    </script>
+

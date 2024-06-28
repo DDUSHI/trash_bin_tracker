@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_500">#6200EE</color> <!-- 주요 색상 500 -->
+    <color name="purple_700">#3700B3</color> <!-- 주요 색상 700 -->
+    <color name="teal_200">#03DAC5</color> <!-- 보조 색상 200 -->
+    <color name="teal_700">#018786</color> <!-- 보조 색상 700 -->
+    <color name="white">#FFFFFF</color> <!-- 흰색 -->
+    <color name="black">#000000</color> <!-- 검정색 -->
+    <color name="purple_200">#BB86FC</color> <!-- 추가된 주요 색상 200 -->
+</resources>
+
+
